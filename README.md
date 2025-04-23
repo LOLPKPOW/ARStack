@@ -12,6 +12,10 @@ PowerShell automation scripts to assist with:
 
 ## - Included Modules
 
+### - Dependencies
+-`PowershellDependencyInstall.ps1`
+    Purpose: Installs all Powershell Module Dependencies.
+
 ### - Exchange
 - `ApplyLitHold.ps1`  
     Purpose: Applies E3 license + litigation hold to 25 accounts at a time.
@@ -109,6 +113,10 @@ $objectID = "The Object ID for an Entra Group"
 $Domain = "The domain you want to use"
 $batchName = "Whatever you want to call your batch"
 $endpointName = "Whatever you want to call your Endpoint for the migration"
+
+    ## Cheat Sheet ##
+    - `Find SKUs for licenses`
+        Get-MgSubscribedSku | Select SkuPartNumber, SkuId, ConsumedUnits
 
 ## Dependencies
 

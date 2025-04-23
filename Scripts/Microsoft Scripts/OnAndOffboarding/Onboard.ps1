@@ -1,11 +1,24 @@
-# Import Modules
+# === OnboardUser.ps1 ===
+
+# Set config paths and values
+$domain = "apaths.onmicrosoft.com"
+$logDir = "C:\AutomationLogs"
+$litHoldScript = "$logDir\ApplySingleLitHold.ps1"
+$logFile = "$logDir\OnboardingLog.csv"
+
+# Import required Graph modules
 Import-Module Microsoft.Graph.Users
 Import-Module Microsoft.Graph.Groups
 
 # Connect to Microsoft Graph
-Connect-MgGraph -Scopes "User.ReadWrite.All", "Group.ReadWrite.All", "Directory.ReadWrite.All"
+try {
+    Connect-MgGraph -Scopes "User.ReadWrite.All", "Group.ReadWrite.All", "Directory.ReadWrite.All"
+} catch {
+    Write-Host "Could not connect to Graph: $($_.Exception.Message)" -ForegroundColor Red
+    return
+}
 
-# Group mapping
+# Define group mapping
 $groupMap = @{
     "1"  = @{ Name = "Accessioning Users"; GroupId = "68de1814-a872-41f8-a2d4-6163b012fe92" }
     "2"  = @{ Name = "Billing and Credentialing Users"; GroupId = "76d9697c-6383-449b-b713-fa7eefff0739" }
@@ -21,19 +34,17 @@ $groupMap = @{
     "12" = @{ Name = "Support Users"; GroupID = "b0218722-caaa-4d98-9d77-3473077def03" }
 }
 
-# Prompt for user info
+# Prompt for user details
 $FirstName = Read-Host "Enter First Name"
 $LastName = Read-Host "Enter Last Name"
 $DisplayName = "$FirstName $LastName"
 $JobTitle = Read-Host "Enter Job Title"
-$Domain = "apaths.onmicrosoft.com"
 
-# Department selection
 Write-Host "`nChoose a department:"
 foreach ($key in $groupMap.Keys | Sort-Object {[int]$_}) {
     Write-Host "$key. $($groupMap[$key].Name)"
 }
-$DepartmentChoice = Read-Host "Choose department (1-11)"
+$DepartmentChoice = Read-Host "Choose department (1-12)"
 if (-not $groupMap.ContainsKey($DepartmentChoice)) {
     Write-Host "Invalid department selection. Exiting." -ForegroundColor Red
     return
@@ -41,30 +52,20 @@ if (-not $groupMap.ContainsKey($DepartmentChoice)) {
 $Department = $groupMap[$DepartmentChoice].Name -replace ' Users$', ''
 $GroupId = $groupMap[$DepartmentChoice].GroupId
 
-# Generate base UPN
+# Generate UPN
 $baseUpn = ($FirstName.Substring(0,1) + $LastName).ToLower()
-$UserPrincipalName = "$baseUpn@$Domain"
-
-# Ensure uniqueness of UPN
+$UserPrincipalName = "$baseUpn@$domain"
 $counter = 2
 while (Get-MgUser -Filter "userPrincipalName eq '$UserPrincipalName'") {
-    $UserPrincipalName = "$baseUpn$counter@$Domain"
+    $UserPrincipalName = "$baseUpn$counter@$domain"
     $counter++
 }
 
-# Generate a random password
+# Random password
 Add-Type -AssemblyName System.Web
 $Password = [System.Web.Security.Membership]::GeneratePassword(12, 3)
 
-# Fixed attributes
-$Phone = "501-225-1400"
-$Street = "5328 Northshore Cove"
-$City = "North Little Rock"
-$State = "Arkansas"
-$PostalCode = "72118"
-$Country = "United States"
-
-# Create the user with required fields
+# Create the user
 $user = New-MgUser -AccountEnabled:$true `
     -DisplayName $DisplayName `
     -MailNickname ($UserPrincipalName.Split("@")[0]) `
@@ -79,20 +80,17 @@ if ($null -eq $user) {
     return
 }
 
-# Save user object for later use
-$userObject = $user
-
-# Update additional profile fields via direct Graph PATCH
+# Patch extra profile attributes
 $patchBody = @{
-    jobTitle      = $JobTitle
-    department    = $Department
-    streetAddress = $Street
-    city          = $City
-    state         = $State
-    postalCode    = $PostalCode
-    country       = $Country
-    businessPhones = @($Phone)
-    officeLocation = "North Little Rock"
+    jobTitle        = $JobTitle
+    department      = $Department
+    streetAddress   = "5328 Northshore Cove"
+    city            = "North Little Rock"
+    state           = "Arkansas"
+    postalCode      = "72118"
+    country         = "United States"
+    businessPhones  = @("501-225-1400")
+    officeLocation  = "North Little Rock"
 } | ConvertTo-Json -Depth 3
 
 Invoke-MgGraphRequest -Method PATCH -Uri "https://graph.microsoft.com/v1.0/users/$($user.Id)" `
@@ -100,68 +98,67 @@ Invoke-MgGraphRequest -Method PATCH -Uri "https://graph.microsoft.com/v1.0/users
 
 # Assign Microsoft 365 Business Premium license
 $licensePatch = @{
-    addLicenses = @(
-        @{
-            skuId = "cbdc14ab-d96c-4c30-b9f4-6ada7cdc1d46"  # Business Premium
-        }
-    )
+    addLicenses = @(@{ skuId = "cbdc14ab-d96c-4c30-b9f4-6ada7cdc1d46" })
     removeLicenses = @()
 } | ConvertTo-Json -Depth 3
 
 Invoke-MgGraphRequest -Method POST -Uri "https://graph.microsoft.com/v1.0/users/$($user.Id)/assignLicense" `
     -Body $licensePatch -ContentType "application/json"
+
 Write-Host "Assigned Microsoft 365 Business Premium to $DisplayName"
 
-# Add to Entra ID group
+# Add to group
 New-MgGroupMember -GroupId $GroupId -BodyParameter @{
     "@odata.id" = "https://graph.microsoft.com/v1.0/directoryObjects/$($user.Id)"
 }
 
-# Check if user is in IT and optionally assign Global Admin via Graph
+# IT Users: Optional Global Admin
 if ($DepartmentChoice -eq "3") {
-    Write-Host "IT user detected."
-
     $giveGlobal = Read-Host "Grant Global Admin to this IT user? (Y/N)"
     if ($giveGlobal -match "^[Yy]") {
         try {
             Connect-MgGraph -Scopes "RoleManagement.ReadWrite.Directory", "Directory.AccessAsUser.All"
             $gaRole = Get-MgRoleManagementDirectoryRoleDefinition -Filter "displayName eq 'Global Administrator'"
-            New-MgRoleManagementDirectoryRoleAssignment -PrincipalId $userObject.Id -RoleDefinitionId $gaRole.Id -DirectoryScopeId "/"
-            Write-Host "Global Admin assigned to $($userObject.UserPrincipalName)"
+            New-MgRoleManagementDirectoryRoleAssignment -PrincipalId $user.Id -RoleDefinitionId $gaRole.Id -DirectoryScopeId "/"
+            Write-Host "Global Admin assigned to $UserPrincipalName"
         } catch {
             Write-Host "Failed to assign Global Admin: $_" -ForegroundColor Red
         }
     }
 }
 
-# Ensure directory exists
-if (-not (Test-Path "C:\AutomationLogs")) {
-    New-Item -ItemType Directory -Path "C:\AutomationLogs" | Out-Null
+# Optionally apply litigation hold
+if (Test-Path $litHoldScript) {
+    $applyLitHold = Read-Host "Apply E3 + Litigation Hold to $UserPrincipalName? (Y/N)"
+    if ($applyLitHold -match "^[Yy]") {
+        & $litHoldScript -Email $UserPrincipalName
+        Write-Host "`nReminder: Run RemoveLitHold.ps1 weekly to clean up any users that still have E3 licenses after Lit Hold was applied." -ForegroundColor Yellow
+
+    }
+} else {
+    Write-Host "Litigation Hold script not found. Skipping."
 }
 
-# Log onboarding details
+# Ensure logs directory
+if (-not (Test-Path $logDir)) {
+    New-Item -ItemType Directory -Path $logDir | Out-Null
+}
+
+# Write log
 $log = [PSCustomObject]@{
-    Timestamp      = (Get-Date)
-    DisplayName    = $DisplayName
-    UPN            = $UserPrincipalName
-    Department     = $Department
-    GlobalAdmin    = ($giveGlobal -match "^[Yy]")
-    License        = "Microsoft 365 Business Premium"
-    Password       = $Password
+    Timestamp    = (Get-Date)
+    DisplayName  = $DisplayName
+    UPN          = $UserPrincipalName
+    Department   = $Department
+    GlobalAdmin  = ($giveGlobal -match "^[Yy]")
+    License      = "Microsoft 365 Business Premium"
+    Password     = $Password
 }
-try {
-    $log | Export-Csv -Path "C:\AutomationLogs\OnboardingLog.csv" -Append -NoTypeInformation
-} catch {
-    Write-Host "Could not write to onboarding log: $_" -ForegroundColor Yellow
-}
+$log | Export-Csv -Path $logFile -Append -NoTypeInformation
 
 # Final summary
-Write-Host ""
-Write-Host "Onboarding complete for $DisplayName ($UserPrincipalName)" -ForegroundColor Green
-Write-Host "Department: $Department"
+Write-Host "`nOnboarding complete for $DisplayName ($UserPrincipalName)" -ForegroundColor Green
 Write-Host "Group: $($groupMap[$DepartmentChoice].Name)"
-Write-Host "Phone: $Phone"
-Write-Host "Address: $Street, $City, $State, $PostalCode"
 Write-Host "License: Microsoft 365 Business Premium"
 Write-Host "Default Password: $Password"
-Write-Host "Log written to: C:\AutomationLogs\OnboardingLog.csv"
+Write-Host "Log written to: $logFile"
