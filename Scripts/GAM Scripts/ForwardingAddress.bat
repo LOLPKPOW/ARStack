@@ -1,0 +1,1 @@
+gam csv all_users.csv gam user ~primaryEmail print forwardingaddresses > forwarding_clean.csv

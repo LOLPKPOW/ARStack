@@ -1,0 +1,1 @@
+gam print users fields primaryEmail,givenName,familyName,name > userswithnames.csv
