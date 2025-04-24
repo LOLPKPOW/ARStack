@@ -1,3 +1,4 @@
+Import-Module ExchangeOnlineManagement
 # === ApplySingleLitHold.ps1 ===
 param (
     [Parameter(Mandatory=$true)][string]$Email

@@ -1,4 +1,5 @@
-﻿# --- ARStack PowerShell Dependency Installer ---
+﻿Import-Module PowerShellGet
+# --- ARStack PowerShell Dependency Installer ---
 # Installs required modules for Exchange, Intune, Graph, etc.
 
 Write-Host "`nInstalling required PowerShell modules..." -ForegroundColor Cyan

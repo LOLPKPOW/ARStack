@@ -1,4 +1,6 @@
-﻿# === ApplyLitHold.ps1 ===
+﻿Import-Module ExchangeOnlineManagement
+
+# === ApplyLitHold.ps1 ===
 $inputCsv = "C:\Path\To\StaleAccounts.csv"
 $outputCsv = "C:\Path\To\ProcessedLitHolds.csv"
 $logPath   = "C:\Path\To\LitHoldApplyLog.csv"

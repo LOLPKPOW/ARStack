@@ -1,3 +1,5 @@
+Import-Module ExchangeOnlineManagement
+
 # === RemoveLitHold.ps1 ===
 
 Import-Module Microsoft.Graph.Users

@@ -1,4 +1,6 @@
-﻿# === RemoveE3IfHeld.ps1 ===
+﻿Import-Module ExchangeOnlineManagement
+
+# === RemoveE3IfHeld.ps1 ===
 
 $inputCsv = "C:\Path\To\ProcessedLitHolds.csv"
 $outputCsv = "C:\Path\To\RemoveE3Results.csv"
@@ -37,7 +39,7 @@ Import-Csv $inputCsv | ForEach-Object {
             }
         }
     } catch {
-        Write-Host "❌ Error processing $email: $($_.Exception.Message)"
+        Write-Host "Error processing ${email}: $($_.Exception.Message)"
         $logResults += [PSCustomObject]@{
             Timestamp      = (Get-Date)
             Email          = $email

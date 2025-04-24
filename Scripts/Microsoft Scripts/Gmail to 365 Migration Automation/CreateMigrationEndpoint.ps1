@@ -1,3 +1,5 @@
+Import-Module ExchangeOnlineManagement
+
 # Connect to Exchange Online
 Connect-ExchangeOnline -UserPrincipalName youradmin@yourtenant.onmicrosoft.com # Don't forget to change this login username
 

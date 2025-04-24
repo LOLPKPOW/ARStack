@@ -17,7 +17,7 @@ PowerShell automation scripts to assist with:
     Purpose: Installs all Powershell Module Dependencies.
 
 ### - Exchange
-- `ApplyLitHold.ps1`  
+- `LitHoldE3Apply.ps1`  
     Purpose: Applies E3 license + litigation hold to 25 accounts at a time.
     CSV: StaleAccounts.csv
     Expected Columns:
@@ -59,6 +59,13 @@ PowerShell automation scripts to assist with:
 - `ForwardingAddress.bat`
     Purpose: Retrieves all mailboxes and any forwarding addresses associated with each mailbox.
 
+-`AllUsersWithNames.bat`
+    Purpose: Grabs all users with their Full Names
+
+-`DistributionListsAutomation.bat`
+    Purpose: Grabs all the distribution groups from GWorkspace with descriptions, then pulls all the members from the groups and exports to a file.
+
+
 ### - Gmail to 365 Migration Automation
 - `LoadMigrationBatch.ps1`  
     Purpose: Creates a migration batch using Gmail endpoint.
@@ -76,8 +83,15 @@ PowerShell automation scripts to assist with:
     Expected Columns:
         This script has batch names hardcoded. Edit the script directly to add/remove batches.
 
+- `CreateDistributionLists.ps1`
+    Purpose: Create distribution lists (with external receiving enabled) loaded from a csv.
+    Expected Columns:
+        email
+        name
+        description
+
 ### - OnAndOffboarding
-- `OnboardUser.ps1`  
+- `Onboard.ps1`  
     Purpose: Full user creation, group placement, profile updates, and license assignment.
     Prompts Interactively.
 
@@ -89,6 +103,15 @@ PowerShell automation scripts to assist with:
         name.givenName
         name.familyName
         name.fullName
+
+- `ApplyLitHold.ps1` 
+    Purpose: Applies E3 and Litigation Hold to new user.
+    Embedded in Onboard.ps1
+    Requires SKU hardcoded into script.
+    Remove if not required for client.
+
+- `RemoveLitHold.ps1`
+    Purpose: Checks all users to see who still has an E3 and Lit Hold is valid. Removes E3 is both apply.
 
 ### - Entra
   `FindOrphanedUsers.ps1`

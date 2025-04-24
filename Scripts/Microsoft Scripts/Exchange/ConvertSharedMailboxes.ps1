@@ -1,4 +1,5 @@
-﻿# === Configuration ===
+﻿Import-Module ExchangeOnlineManagement
+# === Configuration ===
 $csvPath = "C:\Users\pwoodward\Desktop\Work Stuff\Migrations\APS\Migration Setup Files\OldAccountSharedMailboxConversion.csv"
 $logPath = "C:\Users\pwoodward\Desktop\Work Stuff\Migrations\APS\Migration Setup Files\OldAccountSharedMailboxConversion_log.csv"
 $licenseSkuId = "f245ecc8-75af-4f8e-b61f-27d8114de5f3"  # Microsoft 365 Business Premium
