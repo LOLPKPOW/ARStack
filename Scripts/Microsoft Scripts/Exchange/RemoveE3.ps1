@@ -1,9 +1,10 @@
 ﻿Import-Module ExchangeOnlineManagement
-
+Connect-ExchangeOnline
+Connect-MsolService
 # === RemoveE3IfHeld.ps1 ===
 
-$inputCsv = "C:\Path\To\ProcessedLitHolds.csv"
-$outputCsv = "C:\Path\To\RemoveE3Results.csv"
+$inputCsv = "C:\AutomationLogs\output\ProcessedLitHolds.csv"
+$outputCsv = "C:\AutomationLogs\log\RemoveE3Results.csv"
 $skuId = "ENTERPRISEPACK"
 
 # Prepare output

@@ -19,17 +19,22 @@ PowerShell automation scripts to assist with:
 ### - Exchange
 - `LitHoldE3Apply.ps1`  
     Purpose: Applies E3 license + litigation hold to 25 accounts at a time.
-    CSV: StaleAccounts.csv
+    CSV: AccountsPendingLitHold.csv
     Expected Columns:
         Email
+    Outputs:
+        C:\AutomationLogs\output\ProcessedLitHolds.csv — Summary of holds applied
+        C:\AutomationLogs\logs\LitHoldApplyLog.csv — Line-by-line operation log (success, skip, or error)
 
-- `RemoveE3IfHeld.ps1`  
-    Purpose: Checks if Litigation Hold was applied, removes E3 license if so.
-    CSV: ProcessedLitHolds.csv (output of ApplyLitHold)
-    Expected Columns:
+- `RemoveE3.ps1`  
+    Purpose:
+        Removes E3 license only if Litigation Hold is confirmed, for accounts in the most recent batch.
+    CSV: 
+        C:\AutomationLogs\output\ProcessedLitHolds.csv (← produced by LitHoldE3Apply.ps1)
+    Required Columns:
         Email
-        HoldApplied (true/false)
-        LicenseStatus
+    Output File:
+        C:\AutomationLogs\log\RemoveE3Results.csv — results and log of license removals
 
 - `ConvertSharedMailboxes.ps1`
     Purpose: Load CSV, assign license, convert to shared mailbox, remove license.

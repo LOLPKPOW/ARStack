@@ -1,9 +1,10 @@
 Import-Module ExchangeOnlineManagement
+Connect-ExchangeOnline
 # ------------------------------------------
 # CONFIGURATION
 # ------------------------------------------
-$batchName = "PreLicensedMigrationBatch"  ## Change this per batch
-$csvPath = "C:\Users\pwoodward\Desktop\Work Stuff\Migrations\APS\Migration Setup Files\PreLicensedMigrationBatch.csv"
+$batchName = "Active User Catchup"  ## Change this per batch
+$csvPath = "C:\Users\pwoodward\Desktop\Work Stuff\Migrations\APS\Migration Setup Files\activeusercatchup.csv"
 $logDir = "C:\AutomationLogs"
 
 # ------------------------------------------
@@ -74,5 +75,3 @@ if (-not (Test-Path $outputCsvBatch)) {
 elseif (-not (Import-Csv $outputCsvBatch | Where-Object { $_.BatchName -eq $batchName })) {
   @{ BatchName = $batchName } | Export-Csv -Path $outputCsvBatch -NoTypeInformation -Encoding UTF8 -Append
 }
-
-
