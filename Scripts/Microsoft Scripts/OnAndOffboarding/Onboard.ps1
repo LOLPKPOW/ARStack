@@ -127,18 +127,6 @@ if ($DepartmentChoice -eq "3") {
     }
 }
 
-# Optionally apply litigation hold
-if (Test-Path $litHoldScript) {
-    $applyLitHold = Read-Host "Apply E3 + Litigation Hold to $UserPrincipalName? (Y/N)"
-    if ($applyLitHold -match "^[Yy]") {
-        & $litHoldScript -Email $UserPrincipalName
-        Write-Host "`nReminder: Run RemoveLitHold.ps1 weekly to clean up any users that still have E3 licenses after Lit Hold was applied." -ForegroundColor Yellow
-
-    }
-} else {
-    Write-Host "Litigation Hold script not found. Skipping."
-}
-
 # Ensure logs directory
 if (-not (Test-Path $logDir)) {
     New-Item -ItemType Directory -Path $logDir | Out-Null

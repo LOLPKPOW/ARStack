@@ -1,4 +1,5 @@
 Import-Module ExchangeOnlineManagement
+Connect-ExchangeOnline
 
 # Path to your batch list CSV
 $csvPath = "C:\AutomationLogs\input\MigrationBatchList.csv"
