@@ -1,0 +1,8 @@
+{
+    "departmentGroupIds": [
+      "68dda814-p3j2-41f8-a2d4-6163mne312fe92",
+      "76d9697c-6383-449b-b713-fa7eefff0739",
+      "56fc8af0-5cdf-432a-a404-93327kky6300"
+    ],
+    "outputCsvPath": "C:/ARStack/RAutomationLogs/input/orphaned-users.csv"
+  }
