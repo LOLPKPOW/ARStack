@@ -7,7 +7,7 @@ if (!(Test-Path $configPath)) {
 
 $config = Get-Content $configPath | ConvertFrom-Json
 $csvPath = $config.inputCsvPath
-$logPath = "logs\orphaned-move-log.csv"
+$logPath = "C:\ARStack\AutomationLogs\logs\orphaned-move-log.csv"
 $groupId = $config.targetGroupId
 
 # === CONNECT TO GRAPH ===
@@ -45,3 +45,4 @@ Import-Csv -Path $csvPath | Where-Object { $_.UserPrincipalName -and $_.UserPrin
 if (!(Test-Path "logs")) { New-Item -ItemType Directory -Path "logs" | Out-Null }
 $logResults | Export-Csv -Path $logPath -NoTypeInformation
 Write-Host "`nDone! Log saved to:`n$logPath"
+

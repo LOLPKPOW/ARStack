@@ -1,5 +1,5 @@
 ﻿# Load configuration
-$configPath = "config\orphaned-user-check.json"
+$configPath = "C:\ARStack\Configurations\Microsoft Configurations\find-orphaned-users.json"
 if (!(Test-Path $configPath)) {
     Write-Error "Config file not found at $configPath"
     exit 1
@@ -20,9 +20,10 @@ foreach ($groupId in $departmentGroupIds) {
         $members = Get-MgGroupMember -GroupId $groupId -All
         $groupedUserIds += $members.Id
     } catch {
-        Write-Warning "Failed to get members for group $groupId: $_"
+        Write-Warning ("Failed to get members for group " + $groupId + ": " + $_.Exception.Message)
     }
 }
+
 
 # Find users not in any department group
 $orphanedUsers = $allUsers | Where-Object { $groupedUserIds -notcontains $_.Id }
