@@ -1,0 +1,8 @@
+{
+    "logDir": "C:/ARStack/AutomationLogs",
+    "batchName": "InitialUserMigration",
+    "csvPath": "C:/ARStack/AutomationLogs/input/migration-users.csv",
+    "sourceEndpoint": "gmailEndpoint",
+    "notificationEmails": "pwoodward@apaths.net"
+  }
+  

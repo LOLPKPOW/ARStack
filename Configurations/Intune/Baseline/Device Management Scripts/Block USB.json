@@ -1,0 +1,16 @@
+{
+  "runAs32Bit": true,
+  "displayName": "Block USB",
+  "description": "Changes registry entry to block USB\nHKLM\\SYSTEM\\CurrentControlSet\\Services\\USBSTOR = 4",
+  "roleScopeTagIds": [
+    "0"
+  ],
+  "runAsAccount": "system",
+  "lastModifiedDateTime": "2025-04-21T16:49:43.7688856Z",
+  "createdDateTime": "2025-04-21T16:49:43.7688856Z",
+  "enforceSignatureCheck": false,
+  "id": "5e6028da-d21d-4b16-8a04-5db63e63c818",
+  "fileName": "BlockUSB.ps1",
+  "scriptContent": "IyBEaXNhYmxlIFVTQiBNYXNzIFN0b3JhZ2UNClNldC1JdGVtUHJvcGVydHkgLVBhdGggIkhLTE1cU1lTVEVNXEN1cnJlbnRDb250cm9sU2V0XFNlcnZpY2VzXFVTQlNUT1IiIC1OYW1lICJTdGFydCIgLVZhbHVlIDQNCg==",
+  "@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/deviceManagementScripts/$entity"
+}

@@ -1,0 +1,9 @@
+{
+    "batchName": "Active User Catchup",
+    "csvPath": "C:/ARStack/AutomationLogs/input/activeusercatchup.csv",
+    "sourceEndpoint": "gmailEndpoint",
+    "targetDomain": "apaths.onmicrosoft.com",
+    "notificationEmails": "pwoodward@apaths.net",
+    "logDir": "C:/ARStack/AutomationLogs"
+  }
+  

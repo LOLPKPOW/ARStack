@@ -1,38 +1,52 @@
-﻿Import-Module PowerShellGet
-# --- ARStack PowerShell Dependency Installer ---
-# Installs required modules for Exchange, Intune, Graph, etc.
+﻿# --- Install-ARStackDependencies.ps1 ---
+# PowerShell Dependency Installer for ARStack Projects
 
-Write-Host "`nInstalling required PowerShell modules..." -ForegroundColor Cyan
+Write-Host "`n→ Installing required PowerShell modules for ARStack..." -ForegroundColor Cyan
 
-# Repository trust check
+# Ensure PSGallery is trusted
 $repoName = "PSGallery"
 if ((Get-PSRepository -Name $repoName).InstallationPolicy -ne 'Trusted') {
-    Write-Host "Trusting PSGallery..."
+    Write-Host "→ Trusting PSGallery..."
     Set-PSRepository -Name $repoName -InstallationPolicy Trusted
 }
 
-# Install Graph SDK
+# Microsoft Graph SDK (Core)
 if (-not (Get-Module -ListAvailable -Name Microsoft.Graph)) {
-    Write-Host "Installing Microsoft.Graph SDK..."
+    Write-Host "→ Installing Microsoft.Graph SDK..."
     Install-Module Microsoft.Graph -AllowClobber -Force
 }
 
-# Install Exchange Online Management
+# Graph Submodules (if specific APIs are needed)
+$graphSubModules = @(
+    "Microsoft.Graph.Identity.DirectoryManagement",
+    "Microsoft.Graph.DeviceManagement",
+    "Microsoft.Graph.DeviceManagement.Administration",
+    "Microsoft.Graph.DeviceManagement.Configuration"
+)
+
+foreach ($mod in $graphSubModules) {
+    if (-not (Get-Module -ListAvailable -Name $mod)) {
+        Write-Host "→ Installing $mod..."
+        Install-Module $mod -AllowClobber -Force
+    }
+}
+
+# Exchange Online (optional)
 if (-not (Get-Module -ListAvailable -Name ExchangeOnlineManagement)) {
     Write-Host "Installing ExchangeOnlineManagement..."
     Install-Module ExchangeOnlineManagement -AllowClobber -Force
 }
 
-# Optionally install MSOnline (legacy, used in some orgs)
+# IntuneBackupAndRestore (for config backups & restore)
+if (-not (Get-Module -ListAvailable -Name IntuneBackupAndRestore)) {
+    Write-Host "Installing IntuneBackupAndRestore..."
+    Install-Module IntuneBackupAndRestore -AllowClobber -Force
+}
+
+# Legacy MSOnline (optional, if needed for backwards compatibility)
 if (-not (Get-Module -ListAvailable -Name MSOnline)) {
-    Write-Host "Installing MSOnline module..."
+    Write-Host "→ Installing MSOnline module..."
     Install-Module MSOnline -Force
 }
 
-# Install Intune module (optional for config export)
-if (-not (Get-Module -ListAvailable -Name Microsoft.Graph.Intune)) {
-    Write-Host "Installing Microsoft.Graph.Intune (preview)..."
-    Install-Module Microsoft.Graph.Intune -AllowClobber -Force
-}
-
-Write-Host "`All modules installed successfully!" -ForegroundColor Green
+Write-Host "`All ARStack PowerShell modules installed successfully." -ForegroundColor Green

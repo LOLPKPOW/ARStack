@@ -1,0 +1,49 @@
+{
+  "roleScopeTagIds": [
+    "0"
+  ],
+  "templateReference": {
+    "templateId": "",
+    "templateDisplayVersion": null,
+    "templateFamily": "none",
+    "templateDisplayName": null
+  },
+  "description": "Enables Location Settings, and Allows Apps to use Location",
+  "id": "79a8772a-3b09-47a2-94c3-ede667905c99",
+  "name": "Enable Location Settings",
+  "creationSource": null,
+  "lastModifiedDateTime": "2025-04-23T15:00:17.9590604Z",
+  "priorityMetaData": null,
+  "platforms": "windows10",
+  "settingCount": 2,
+  "createdDateTime": "2025-04-23T15:00:17.9590604Z",
+  "technologies": "mdm",
+  "settings": [
+    {
+      "id": "0",
+      "settingInstance": {
+        "settingDefinitionId": "device_vendor_msft_policy_config_privacy_letappsaccesslocation",
+        "settingInstanceTemplateReference": null,
+        "choiceSettingValue": {
+          "children": [],
+          "settingValueTemplateReference": null,
+          "value": "device_vendor_msft_policy_config_privacy_letappsaccesslocation_1"
+        },
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance"
+      }
+    },
+    {
+      "id": "1",
+      "settingInstance": {
+        "settingDefinitionId": "device_vendor_msft_policy_config_system_allowlocation",
+        "settingInstanceTemplateReference": null,
+        "choiceSettingValue": {
+          "children": [],
+          "settingValueTemplateReference": null,
+          "value": "device_vendor_msft_policy_config_system_allowlocation_2"
+        },
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance"
+      }
+    }
+  ]
+}

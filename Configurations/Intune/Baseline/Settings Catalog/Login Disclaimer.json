@@ -1,0 +1,51 @@
+{
+  "roleScopeTagIds": [
+    "0"
+  ],
+  "templateReference": {
+    "templateId": "",
+    "templateDisplayVersion": null,
+    "templateFamily": "none",
+    "templateDisplayName": null
+  },
+  "description": "Login Disclaimer",
+  "id": "2039a970-d098-415d-a6ea-61617a1f6d6a",
+  "name": "Login Disclaimer",
+  "creationSource": null,
+  "lastModifiedDateTime": "2025-04-09T14:07:44.3437866Z",
+  "priorityMetaData": null,
+  "platforms": "windows10",
+  "settingCount": 2,
+  "createdDateTime": "2025-04-09T14:07:44.3437866Z",
+  "technologies": "mdm",
+  "settings": [
+    {
+      "id": "0",
+      "settingInstance": {
+        "simpleSettingCollectionValue": [
+          {
+            "settingValueTemplateReference": null,
+            "value": "This system is the property of Advanced Pathology Solutions and is intended for authorized use only. Access to this device and the data it contains is monitored and logged.  By proceeding, you acknowledge that this system may store, transmit, or process Protected Health Information (PHI) subject to the Health Insurance Portability and Accountability Act (HIPAA). Unauthorized access, disclosure, or misuse of PHI is strictly prohibited and may result in disciplinary action, civil penalties, and/or criminal prosecution.  If you are not an authorized user, disconnect immediately.",
+            "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue"
+          }
+        ],
+        "settingDefinitionId": "device_vendor_msft_policy_config_localpoliciessecurityoptions_interactivelogon_messagetextforusersattemptingtologon",
+        "settingInstanceTemplateReference": null,
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingCollectionInstance"
+      }
+    },
+    {
+      "id": "1",
+      "settingInstance": {
+        "settingDefinitionId": "device_vendor_msft_policy_config_localpoliciessecurityoptions_interactivelogon_messagetitleforusersattemptingtologon",
+        "settingInstanceTemplateReference": null,
+        "simpleSettingValue": {
+          "settingValueTemplateReference": null,
+          "value": "HIPAA Compliance Warning",
+          "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue"
+        },
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance"
+      }
+    }
+  ]
+}

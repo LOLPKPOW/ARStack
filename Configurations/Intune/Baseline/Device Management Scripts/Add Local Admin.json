@@ -1,0 +1,16 @@
+{
+  "runAs32Bit": true,
+  "displayName": "Add Local Admin",
+  "description": "Add Local Admin",
+  "roleScopeTagIds": [
+    "0"
+  ],
+  "runAsAccount": "user",
+  "lastModifiedDateTime": "2025-04-16T14:34:18.5996372Z",
+  "createdDateTime": "2025-04-10T20:42:24.31933Z",
+  "enforceSignatureCheck": false,
+  "id": "71934cc6-803b-4266-abf8-9aa1e3579e2f",
+  "fileName": "localadmin.ps1",
+  "scriptContent": "77u/JFVzZXJuYW1lID0gIkFQU0FkbWluIg0KJFBhc3N3b3JkID0gQ29udmVydFRvLVNlY3VyZVN0cmluZyAiT2NlYW5zMWRlIiAtQXNQbGFpblRleHQgLUZvcmNlDQokR3JvdXAgPSAiQWRtaW5pc3RyYXRvcnMiDQoNCiMgQ2hlY2sgaWYgdGhlIHVzZXIgYWxyZWFkeSBleGlzdHMNCmlmICgtbm90IChHZXQtTG9jYWxVc2VyIC1OYW1lICRVc2VybmFtZSAtRXJyb3JBY3Rpb24gU2lsZW50bHlDb250aW51ZSkpIHsNCiAgICBXcml0ZS1PdXRwdXQgIvCfhpUgQ3JlYXRpbmcgbG9jYWwgdXNlciAnJFVzZXJuYW1lJyINCiAgICBOZXctTG9jYWxVc2VyIC1OYW1lICRVc2VybmFtZSAtUGFzc3dvcmQgJFBhc3N3b3JkIC1GdWxsTmFtZSAiTG9jYWwgQWRtaW4iIC1EZXNjcmlwdGlvbiAiQ3JlYXRlZCBieSBJbnR1bmUgc2NyaXB0IiAtUGFzc3dvcmROZXZlckV4cGlyZXMgLUFjY291bnROZXZlckV4cGlyZXMNCn0gZWxzZSB7DQogICAgV3JpdGUtT3V0cHV0ICLinIUgVXNlciAnJFVzZXJuYW1lJyBhbHJlYWR5IGV4aXN0cyINCn0NCg0KIyBDaGVjayBpZiB0aGUgdXNlciBpcyBhbHJlYWR5IGEgbWVtYmVyIG9mIHRoZSBBZG1pbmlzdHJhdG9ycyBncm91cA0KJGV4aXN0aW5nID0gR2V0LUxvY2FsR3JvdXBNZW1iZXIgLUdyb3VwICRHcm91cCAtRXJyb3JBY3Rpb24gU2lsZW50bHlDb250aW51ZSB8IFdoZXJlLU9iamVjdCB7ICRfLk5hbWUgLWVxICRVc2VybmFtZSAtb3IgJF8uTmFtZSAtbGlrZSAiKlwkVXNlcm5hbWUiIH0NCg0KaWYgKC1ub3QgJGV4aXN0aW5nKSB7DQogICAgV3JpdGUtT3V0cHV0ICLwn5GRIEFkZGluZyAnJFVzZXJuYW1lJyB0byB0aGUgQWRtaW5pc3RyYXRvcnMgZ3JvdXAiDQogICAgQWRkLUxvY2FsR3JvdXBNZW1iZXIgLUdyb3VwICRHcm91cCAtTWVtYmVyICRVc2VybmFtZQ0KfSBlbHNlIHsNCiAgICBXcml0ZS1PdXRwdXQgIuKchSAnJFVzZXJuYW1lJyBpcyBhbHJlYWR5IGluIHRoZSBBZG1pbmlzdHJhdG9ycyBncm91cCINCn0NCg==",
+  "@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/deviceManagementScripts/$entity"
+}

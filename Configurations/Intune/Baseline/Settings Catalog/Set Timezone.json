@@ -1,0 +1,36 @@
+{
+  "roleScopeTagIds": [
+    "0"
+  ],
+  "templateReference": {
+    "templateId": "",
+    "templateDisplayVersion": null,
+    "templateFamily": "none",
+    "templateDisplayName": null
+  },
+  "description": "Set Timezone to CST",
+  "id": "4179cdcb-7c6e-454e-bb1a-6f230b9e2497",
+  "name": "Set Timezone",
+  "creationSource": null,
+  "lastModifiedDateTime": "2025-04-14T20:10:18.1501613Z",
+  "priorityMetaData": null,
+  "platforms": "windows10",
+  "settingCount": 1,
+  "createdDateTime": "2025-04-14T20:10:18.1501613Z",
+  "technologies": "mdm",
+  "settings": [
+    {
+      "id": "0",
+      "settingInstance": {
+        "settingDefinitionId": "device_vendor_msft_policy_config_timelanguagesettings_configuretimezone",
+        "settingInstanceTemplateReference": null,
+        "simpleSettingValue": {
+          "settingValueTemplateReference": null,
+          "value": "Central Standard Time",
+          "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue"
+        },
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance"
+      }
+    }
+  ]
+}

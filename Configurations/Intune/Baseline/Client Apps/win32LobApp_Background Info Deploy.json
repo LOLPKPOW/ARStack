@@ -1,0 +1,111 @@
+{
+  "allowAvailableUninstall": false,
+  "installCommandLine": "bginfo-deploy.bat",
+  "detectionRules": [
+    {
+      "enforceSignatureCheck": false,
+      "scriptContent": "JHJlZ1BhdGggPSAiSEtDVTpcU29mdHdhcmVcQ2xhc3Nlc1wuYmdpIg0KJGV4cGVjdGVkVmFsdWUgPSAiQkdJbmZvLkNvbmZpZy4xIg0KDQp0cnkgew0KICAgICRhY3R1YWxWYWx1ZSA9IChHZXQtSXRlbVByb3BlcnR5IC1QYXRoICRyZWdQYXRoIC1OYW1lICIoZGVmYXVsdCkiIC1FcnJvckFjdGlvbiBTdG9wKS4iKGRlZmF1bHQpIg0KICAgIGlmICgkYWN0dWFsVmFsdWUgLWVxICRleHBlY3RlZFZhbHVlKSB7DQogICAgICAgIFdyaXRlLU91dHB1dCAiQkdJbmZvIGFzc29jaWF0aW9uIGZvdW5kIg0KICAgICAgICBleGl0IDANCiAgICB9IGVsc2Ugew0KICAgICAgICBXcml0ZS1PdXRwdXQgIkJHSW5mbyBhc3NvY2lhdGlvbiBtaXNtYXRjaCINCiAgICAgICAgZXhpdCAxDQogICAgfQ0KfSBjYXRjaCB7DQogICAgV3JpdGUtT3V0cHV0ICJCR0luZm8gYXNzb2NpYXRpb24gbm90IGZvdW5kIg0KICAgIGV4aXQgMQ0KfQ0K",
+      "runAs32Bit": false,
+      "@odata.type": "#microsoft.graph.win32LobAppPowerShellScriptDetection"
+    }
+  ],
+  "notes": "",
+  "largeIcon": null,
+  "displayVersion": "",
+  "requirementRules": [],
+  "@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceAppManagement/mobileApps/$entity",
+  "minimumFreeDiskSpaceInMB": null,
+  "supersedingAppCount": 0,
+  "supersededAppCount": 0,
+  "privacyInformationUrl": "",
+  "allowedArchitectures": null,
+  "isFeatured": false,
+  "id": "842b273c-023c-4eef-8cc9-2359215e06be",
+  "fileName": "bginfo-deploy.intunewin",
+  "minimumMemoryInMB": null,
+  "isAssigned": false,
+  "developer": "",
+  "uploadState": 1,
+  "setupFilePath": "bginfo-deploy.bat",
+  "committedContentVersion": "1",
+  "roleScopeTagIds": [
+    "0"
+  ],
+  "description": "bginfo-deploy.bat",
+  "@odata.type": "#microsoft.graph.win32LobApp",
+  "owner": "",
+  "applicableArchitectures": "x64",
+  "minimumCpuSpeedInMHz": null,
+  "displayName": "Background Info Deploy",
+  "msiInformation": null,
+  "dependentAppCount": 0,
+  "publisher": "APS",
+  "size": 1132112,
+  "publishingState": "published",
+  "installExperience": {
+    "maxRunTimeInMinutes": 5,
+    "deviceRestartBehavior": "suppress",
+    "runAsAccount": "user"
+  },
+  "informationUrl": null,
+  "rules": [
+    {
+      "runAs32Bit": false,
+      "displayName": null,
+      "ruleType": "detection",
+      "@odata.type": "#microsoft.graph.win32LobAppPowerShellScriptRule",
+      "operator": "notConfigured",
+      "comparisonValue": null,
+      "enforceSignatureCheck": false,
+      "scriptContent": "JHJlZ1BhdGggPSAiSEtDVTpcU29mdHdhcmVcQ2xhc3Nlc1wuYmdpIg0KJGV4cGVjdGVkVmFsdWUgPSAiQkdJbmZvLkNvbmZpZy4xIg0KDQp0cnkgew0KICAgICRhY3R1YWxWYWx1ZSA9IChHZXQtSXRlbVByb3BlcnR5IC1QYXRoICRyZWdQYXRoIC1OYW1lICIoZGVmYXVsdCkiIC1FcnJvckFjdGlvbiBTdG9wKS4iKGRlZmF1bHQpIg0KICAgIGlmICgkYWN0dWFsVmFsdWUgLWVxICRleHBlY3RlZFZhbHVlKSB7DQogICAgICAgIFdyaXRlLU91dHB1dCAiQkdJbmZvIGFzc29jaWF0aW9uIGZvdW5kIg0KICAgICAgICBleGl0IDANCiAgICB9IGVsc2Ugew0KICAgICAgICBXcml0ZS1PdXRwdXQgIkJHSW5mbyBhc3NvY2lhdGlvbiBtaXNtYXRjaCINCiAgICAgICAgZXhpdCAxDQogICAgfQ0KfSBjYXRjaCB7DQogICAgV3JpdGUtT3V0cHV0ICJCR0luZm8gYXNzb2NpYXRpb24gbm90IGZvdW5kIg0KICAgIGV4aXQgMQ0KfQ0K",
+      "runAsAccount": null,
+      "operationType": "notConfigured"
+    }
+  ],
+  "minimumNumberOfProcessors": null,
+  "lastModifiedDateTime": "2025-04-16T19:42:47.2372366Z",
+  "createdDateTime": "2025-04-16T19:42:47.2372366Z",
+  "returnCodes": [
+    {
+      "type": "success",
+      "returnCode": 0
+    },
+    {
+      "type": "success",
+      "returnCode": 1707
+    },
+    {
+      "type": "softReboot",
+      "returnCode": 3010
+    },
+    {
+      "type": "hardReboot",
+      "returnCode": 1641
+    },
+    {
+      "type": "retry",
+      "returnCode": 1618
+    },
+    {
+      "type": "failed",
+      "returnCode": 1
+    }
+  ],
+  "minimumSupportedWindowsRelease": "1607",
+  "uninstallCommandLine": "exit 0",
+  "minimumSupportedOperatingSystem": {
+    "v10_1607": true,
+    "v10_1709": false,
+    "v10_1903": false,
+    "v10_1809": false,
+    "v10_2004": false,
+    "v10_1703": false,
+    "v10_1909": false,
+    "v8_1": false,
+    "v8_0": false,
+    "v10_1803": false,
+    "v10_2H20": false,
+    "v10_0": false,
+    "v10_21H1": false
+  }
+}

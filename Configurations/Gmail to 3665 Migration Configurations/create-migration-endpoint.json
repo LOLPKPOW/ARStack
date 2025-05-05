@@ -1,0 +1,7 @@
+{
+    "adminUpn": "youradmin@yourtenant.onmicrosoft.com",
+    "serviceAccountKeyPath": "C:/ARStack/ServiceAccounts/gworkspace-key.json",
+    "googleAdminEmail": "adminuser@clientdomain.com",
+    "migrationEndpointName": "gmailEndpoint"
+  }
+  

@@ -1,0 +1,6 @@
+{
+    "serviceAccountKeyPath": "C:/ARStack/Secrets/service-account-key.json",
+    "gmailAdminAddress": "admin@clientdomain.com",
+    "endpointName": "gmailEndpoint"
+  }
+  

@@ -1,0 +1,38 @@
+{
+  "language": "os-default",
+  "description": "User driver autopilot deployment testing",
+  "deviceNameTemplate": "",
+  "outOfBoxExperienceSettings": {
+    "hideEULA": true,
+    "userType": "standard",
+    "hideEscapeLink": true,
+    "hidePrivacySettings": true,
+    "deviceUsageType": "singleUser",
+    "skipKeyboardSelectionPage": true
+  },
+  "hardwareHashExtractionEnabled": false,
+  "deviceType": "windowsPc",
+  "enableWhiteGlove": true,
+  "@odata.type": "#microsoft.graph.azureADWindowsAutopilotDeploymentProfile",
+  "outOfBoxExperienceSetting": {
+    "eulaHidden": true,
+    "escapeLinkHidden": true,
+    "userType": "standard",
+    "keyboardSelectionPageSkipped": true,
+    "privacySettingsHidden": true,
+    "deviceUsageType": "singleUser"
+  },
+  "createdDateTime": "2025-04-14T19:11:02.2566048Z",
+  "extractHardwareHash": false,
+  "preprovisioningAllowed": true,
+  "id": "fba43578-112f-43bf-81b3-dce360aa4bcd",
+  "managementServiceAppId": null,
+  "enrollmentStatusScreenSettings": null,
+  "locale": "os-default",
+  "roleScopeTagIds": [
+    "0"
+  ],
+  "displayName": "Autopilot Standard User Driven",
+  "@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/windowsAutopilotDeploymentProfiles/$entity",
+  "lastModifiedDateTime": "2025-04-14T19:11:02.2566048Z"
+}

@@ -1,0 +1,271 @@
+{
+  "roleScopeTagIds": [
+    "0"
+  ],
+  "templateReference": {
+    "templateId": "",
+    "templateDisplayVersion": null,
+    "templateFamily": "none",
+    "templateDisplayName": null
+  },
+  "description": "OneDrive Silent Install",
+  "id": "cbc1039f-6d39-4bd5-921c-26b6df6d56c0",
+  "name": "OneDrive Silent Install",
+  "creationSource": null,
+  "lastModifiedDateTime": "2025-04-09T17:21:52.6008901Z",
+  "priorityMetaData": null,
+  "platforms": "windows10",
+  "settingCount": 3,
+  "createdDateTime": "2025-04-09T17:21:52.6008901Z",
+  "technologies": "mdm",
+  "settings": [
+    {
+      "id": "0",
+      "settingInstance": {
+        "settingDefinitionId": "user_vendor_msft_policy_config_onedrivengscv2~policy~onedrivengsc_automountteamsites",
+        "settingInstanceTemplateReference": null,
+        "choiceSettingValue": {
+          "children": [
+            {
+              "settingDefinitionId": "user_vendor_msft_policy_config_onedrivengscv2~policy~onedrivengsc_automountteamsites_automountteamsiteslistbox",
+              "settingInstanceTemplateReference": null,
+              "groupSettingCollectionValue": [
+                {
+                  "children": [
+                    {
+                      "settingDefinitionId": "user_vendor_msft_policy_config_onedrivengscv2~policy~onedrivengsc_automountteamsites_automountteamsiteslistbox_key",
+                      "settingInstanceTemplateReference": null,
+                      "simpleSettingValue": {
+                        "settingValueTemplateReference": null,
+                        "value": "libraryPath",
+                        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue"
+                      },
+                      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance"
+                    },
+                    {
+                      "settingDefinitionId": "user_vendor_msft_policy_config_onedrivengscv2~policy~onedrivengsc_automountteamsites_automountteamsiteslistbox_value",
+                      "settingInstanceTemplateReference": null,
+                      "simpleSettingValue": {
+                        "settingValueTemplateReference": null,
+                        "value": "Shared Documents",
+                        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue"
+                      },
+                      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance"
+                    }
+                  ],
+                  "settingValueTemplateReference": null
+                },
+                {
+                  "children": [
+                    {
+                      "settingDefinitionId": "user_vendor_msft_policy_config_onedrivengscv2~policy~onedrivengsc_automountteamsites_automountteamsiteslistbox_key",
+                      "settingInstanceTemplateReference": null,
+                      "simpleSettingValue": {
+                        "settingValueTemplateReference": null,
+                        "value": "listID",
+                        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue"
+                      },
+                      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance"
+                    },
+                    {
+                      "settingDefinitionId": "user_vendor_msft_policy_config_onedrivengscv2~policy~onedrivengsc_automountteamsites_automountteamsiteslistbox_value",
+                      "settingInstanceTemplateReference": null,
+                      "simpleSettingValue": {
+                        "settingValueTemplateReference": null,
+                        "value": "b!AI82EsRLKEui_WJkaNCQ_YNE142ldcJKr47jxSV4Wx-jQ3KJwhWkT5phqzL3x7Lx",
+                        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue"
+                      },
+                      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance"
+                    }
+                  ],
+                  "settingValueTemplateReference": null
+                },
+                {
+                  "children": [
+                    {
+                      "settingDefinitionId": "user_vendor_msft_policy_config_onedrivengscv2~policy~onedrivengsc_automountteamsites_automountteamsiteslistbox_key",
+                      "settingInstanceTemplateReference": null,
+                      "simpleSettingValue": {
+                        "settingValueTemplateReference": null,
+                        "value": "siteId",
+                        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue"
+                      },
+                      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance"
+                    },
+                    {
+                      "settingDefinitionId": "user_vendor_msft_policy_config_onedrivengscv2~policy~onedrivengsc_automountteamsites_automountteamsiteslistbox_value",
+                      "settingInstanceTemplateReference": null,
+                      "simpleSettingValue": {
+                        "settingValueTemplateReference": null,
+                        "value": "apaths.sharepoint.com",
+                        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue"
+                      },
+                      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance"
+                    }
+                  ],
+                  "settingValueTemplateReference": null
+                },
+                {
+                  "children": [
+                    {
+                      "settingDefinitionId": "user_vendor_msft_policy_config_onedrivengscv2~policy~onedrivengsc_automountteamsites_automountteamsiteslistbox_key",
+                      "settingInstanceTemplateReference": null,
+                      "simpleSettingValue": {
+                        "settingValueTemplateReference": null,
+                        "value": "teamSiteUrl",
+                        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue"
+                      },
+                      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance"
+                    },
+                    {
+                      "settingDefinitionId": "user_vendor_msft_policy_config_onedrivengscv2~policy~onedrivengsc_automountteamsites_automountteamsiteslistbox_value",
+                      "settingInstanceTemplateReference": null,
+                      "simpleSettingValue": {
+                        "settingValueTemplateReference": null,
+                        "value": "https://apaths.sharepoint.com/sites/TestSharepointSite",
+                        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue"
+                      },
+                      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance"
+                    }
+                  ],
+                  "settingValueTemplateReference": null
+                },
+                {
+                  "children": [
+                    {
+                      "settingDefinitionId": "user_vendor_msft_policy_config_onedrivengscv2~policy~onedrivengsc_automountteamsites_automountteamsiteslistbox_key",
+                      "settingInstanceTemplateReference": null,
+                      "simpleSettingValue": {
+                        "settingValueTemplateReference": null,
+                        "value": "webId",
+                        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue"
+                      },
+                      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance"
+                    },
+                    {
+                      "settingDefinitionId": "user_vendor_msft_policy_config_onedrivengscv2~policy~onedrivengsc_automountteamsites_automountteamsiteslistbox_value",
+                      "settingInstanceTemplateReference": null,
+                      "simpleSettingValue": {
+                        "settingValueTemplateReference": null,
+                        "value": "12368f00-4bc4-4b28-a2fd-626468d090fd",
+                        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue"
+                      },
+                      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance"
+                    }
+                  ],
+                  "settingValueTemplateReference": null
+                },
+                {
+                  "children": [
+                    {
+                      "settingDefinitionId": "user_vendor_msft_policy_config_onedrivengscv2~policy~onedrivengsc_automountteamsites_automountteamsiteslistbox_key",
+                      "settingInstanceTemplateReference": null,
+                      "simpleSettingValue": {
+                        "settingValueTemplateReference": null,
+                        "value": "syncType",
+                        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue"
+                      },
+                      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance"
+                    },
+                    {
+                      "settingDefinitionId": "user_vendor_msft_policy_config_onedrivengscv2~policy~onedrivengsc_automountteamsites_automountteamsiteslistbox_value",
+                      "settingInstanceTemplateReference": null,
+                      "simpleSettingValue": {
+                        "settingValueTemplateReference": null,
+                        "value": "OneDrive",
+                        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue"
+                      },
+                      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance"
+                    }
+                  ],
+                  "settingValueTemplateReference": null
+                }
+              ],
+              "@odata.type": "#microsoft.graph.deviceManagementConfigurationGroupSettingCollectionInstance"
+            }
+          ],
+          "settingValueTemplateReference": null,
+          "value": "user_vendor_msft_policy_config_onedrivengscv2~policy~onedrivengsc_automountteamsites_1"
+        },
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance"
+      }
+    },
+    {
+      "id": "1",
+      "settingInstance": {
+        "settingDefinitionId": "device_vendor_msft_policy_config_onedrivengscv2.updates~policy~onedrivengsc_kfmoptinnowizard",
+        "settingInstanceTemplateReference": null,
+        "choiceSettingValue": {
+          "children": [
+            {
+              "settingDefinitionId": "device_vendor_msft_policy_config_onedrivengscv2.updates~policy~onedrivengsc_kfmoptinnowizard_kfmoptinnowizard_desktop_checkbox",
+              "settingInstanceTemplateReference": null,
+              "choiceSettingValue": {
+                "children": [],
+                "settingValueTemplateReference": null,
+                "value": "device_vendor_msft_policy_config_onedrivengscv2.updates~policy~onedrivengsc_kfmoptinnowizard_kfmoptinnowizard_desktop_checkbox_1"
+              },
+              "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance"
+            },
+            {
+              "settingDefinitionId": "device_vendor_msft_policy_config_onedrivengscv2.updates~policy~onedrivengsc_kfmoptinnowizard_kfmoptinnowizard_documents_checkbox",
+              "settingInstanceTemplateReference": null,
+              "choiceSettingValue": {
+                "children": [],
+                "settingValueTemplateReference": null,
+                "value": "device_vendor_msft_policy_config_onedrivengscv2.updates~policy~onedrivengsc_kfmoptinnowizard_kfmoptinnowizard_documents_checkbox_1"
+              },
+              "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance"
+            },
+            {
+              "settingDefinitionId": "device_vendor_msft_policy_config_onedrivengscv2.updates~policy~onedrivengsc_kfmoptinnowizard_kfmoptinnowizard_pictures_checkbox",
+              "settingInstanceTemplateReference": null,
+              "choiceSettingValue": {
+                "children": [],
+                "settingValueTemplateReference": null,
+                "value": "device_vendor_msft_policy_config_onedrivengscv2.updates~policy~onedrivengsc_kfmoptinnowizard_kfmoptinnowizard_pictures_checkbox_1"
+              },
+              "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance"
+            },
+            {
+              "settingDefinitionId": "device_vendor_msft_policy_config_onedrivengscv2.updates~policy~onedrivengsc_kfmoptinnowizard_kfmoptinnowizard_dropdown",
+              "settingInstanceTemplateReference": null,
+              "choiceSettingValue": {
+                "children": [],
+                "settingValueTemplateReference": null,
+                "value": "device_vendor_msft_policy_config_onedrivengscv2.updates~policy~onedrivengsc_kfmoptinnowizard_kfmoptinnowizard_dropdown_0"
+              },
+              "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance"
+            },
+            {
+              "settingDefinitionId": "device_vendor_msft_policy_config_onedrivengscv2.updates~policy~onedrivengsc_kfmoptinnowizard_kfmoptinnowizard_textbox",
+              "settingInstanceTemplateReference": null,
+              "simpleSettingValue": {
+                "settingValueTemplateReference": null,
+                "value": "",
+                "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue"
+              },
+              "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance"
+            }
+          ],
+          "settingValueTemplateReference": null,
+          "value": "device_vendor_msft_policy_config_onedrivengscv2.updates~policy~onedrivengsc_kfmoptinnowizard_1"
+        },
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance"
+      }
+    },
+    {
+      "id": "2",
+      "settingInstance": {
+        "settingDefinitionId": "device_vendor_msft_policy_config_onedrivengscv2~policy~onedrivengsc_silentaccountconfig",
+        "settingInstanceTemplateReference": null,
+        "choiceSettingValue": {
+          "children": [],
+          "settingValueTemplateReference": null,
+          "value": "device_vendor_msft_policy_config_onedrivengscv2~policy~onedrivengsc_silentaccountconfig_1"
+        },
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance"
+      }
+    }
+  ]
+}

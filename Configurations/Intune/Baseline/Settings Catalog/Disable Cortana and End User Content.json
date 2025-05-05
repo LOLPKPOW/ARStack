@@ -1,0 +1,153 @@
+{
+  "roleScopeTagIds": [
+    "0"
+  ],
+  "templateReference": {
+    "templateId": "",
+    "templateDisplayVersion": null,
+    "templateFamily": "none",
+    "templateDisplayName": null
+  },
+  "description": "Disable Cortana, Weather, Stock and other wacky widgets",
+  "id": "7309e4a2-bfb5-4e15-8f68-c1589128da5a",
+  "name": "Disable Cortana and End User Content",
+  "creationSource": null,
+  "lastModifiedDateTime": "2025-04-15T16:08:21.7304396Z",
+  "priorityMetaData": null,
+  "platforms": "windows10",
+  "settingCount": 10,
+  "createdDateTime": "2025-04-14T19:51:33.3528033Z",
+  "technologies": "mdm",
+  "settings": [
+    {
+      "id": "0",
+      "settingInstance": {
+        "settingDefinitionId": "device_vendor_msft_policy_config_admx_userexperiencevirtualization_weather",
+        "settingInstanceTemplateReference": null,
+        "choiceSettingValue": {
+          "children": [],
+          "settingValueTemplateReference": null,
+          "value": "device_vendor_msft_policy_config_admx_userexperiencevirtualization_weather_0"
+        },
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance"
+      }
+    },
+    {
+      "id": "1",
+      "settingInstance": {
+        "settingDefinitionId": "user_vendor_msft_policy_config_admx_userexperiencevirtualization_weather",
+        "settingInstanceTemplateReference": null,
+        "choiceSettingValue": {
+          "children": [],
+          "settingValueTemplateReference": null,
+          "value": "user_vendor_msft_policy_config_admx_userexperiencevirtualization_weather_0"
+        },
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance"
+      }
+    },
+    {
+      "id": "2",
+      "settingInstance": {
+        "settingDefinitionId": "device_vendor_msft_policy_config_experience_allowcortana",
+        "settingInstanceTemplateReference": null,
+        "choiceSettingValue": {
+          "children": [],
+          "settingValueTemplateReference": null,
+          "value": "device_vendor_msft_policy_config_experience_allowcortana_0"
+        },
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance"
+      }
+    },
+    {
+      "id": "3",
+      "settingInstance": {
+        "settingDefinitionId": "user_vendor_msft_policy_config_experience_allowwindowsspotlight",
+        "settingInstanceTemplateReference": null,
+        "choiceSettingValue": {
+          "children": [],
+          "settingValueTemplateReference": null,
+          "value": "user_vendor_msft_policy_config_experience_allowwindowsspotlight_0"
+        },
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance"
+      }
+    },
+    {
+      "id": "4",
+      "settingInstance": {
+        "settingDefinitionId": "device_vendor_msft_policy_config_microsoft_edgev80diff~policy~microsoft_edge_personalizationreportingenabled",
+        "settingInstanceTemplateReference": null,
+        "choiceSettingValue": {
+          "children": [],
+          "settingValueTemplateReference": null,
+          "value": "device_vendor_msft_policy_config_microsoft_edgev80diff~policy~microsoft_edge_personalizationreportingenabled_0"
+        },
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance"
+      }
+    },
+    {
+      "id": "5",
+      "settingInstance": {
+        "settingDefinitionId": "user_vendor_msft_policy_config_microsoft_edgev80diff~policy~microsoft_edge_personalizationreportingenabled",
+        "settingInstanceTemplateReference": null,
+        "choiceSettingValue": {
+          "children": [],
+          "settingValueTemplateReference": null,
+          "value": "user_vendor_msft_policy_config_microsoft_edgev80diff~policy~microsoft_edge_personalizationreportingenabled_0"
+        },
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance"
+      }
+    },
+    {
+      "id": "6",
+      "settingInstance": {
+        "settingDefinitionId": "device_vendor_msft_policy_config_microsoft_edgev91~policy~microsoft_edge~startup_newtabpagecontentenabled",
+        "settingInstanceTemplateReference": null,
+        "choiceSettingValue": {
+          "children": [],
+          "settingValueTemplateReference": null,
+          "value": "device_vendor_msft_policy_config_microsoft_edgev91~policy~microsoft_edge~startup_newtabpagecontentenabled_0"
+        },
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance"
+      }
+    },
+    {
+      "id": "7",
+      "settingInstance": {
+        "settingDefinitionId": "user_vendor_msft_policy_config_microsoft_edgev91~policy~microsoft_edge~startup_newtabpagecontentenabled",
+        "settingInstanceTemplateReference": null,
+        "choiceSettingValue": {
+          "children": [],
+          "settingValueTemplateReference": null,
+          "value": "user_vendor_msft_policy_config_microsoft_edgev91~policy~microsoft_edge~startup_newtabpagecontentenabled_0"
+        },
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance"
+      }
+    },
+    {
+      "id": "8",
+      "settingInstance": {
+        "settingDefinitionId": "device_vendor_msft_policy_config_search_allowcortanainaad",
+        "settingInstanceTemplateReference": null,
+        "choiceSettingValue": {
+          "children": [],
+          "settingValueTemplateReference": null,
+          "value": "device_vendor_msft_policy_config_search_allowcortanainaad_0"
+        },
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance"
+      }
+    },
+    {
+      "id": "9",
+      "settingInstance": {
+        "settingDefinitionId": "device_vendor_msft_policy_config_newsandinterests_allownewsandinterests",
+        "settingInstanceTemplateReference": null,
+        "choiceSettingValue": {
+          "children": [],
+          "settingValueTemplateReference": null,
+          "value": "device_vendor_msft_policy_config_newsandinterests_allownewsandinterests_0"
+        },
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance"
+      }
+    }
+  ]
+}

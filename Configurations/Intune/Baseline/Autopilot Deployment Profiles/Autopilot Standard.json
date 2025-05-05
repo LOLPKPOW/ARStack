@@ -1,0 +1,38 @@
+{
+  "language": "en-US",
+  "description": "Standard Autopilot Deployment",
+  "deviceNameTemplate": "APS-%RAND:4%",
+  "outOfBoxExperienceSettings": {
+    "hideEULA": true,
+    "userType": "standard",
+    "hideEscapeLink": true,
+    "hidePrivacySettings": true,
+    "deviceUsageType": "shared",
+    "skipKeyboardSelectionPage": true
+  },
+  "hardwareHashExtractionEnabled": true,
+  "deviceType": "windowsPc",
+  "enableWhiteGlove": false,
+  "@odata.type": "#microsoft.graph.azureADWindowsAutopilotDeploymentProfile",
+  "outOfBoxExperienceSetting": {
+    "eulaHidden": true,
+    "escapeLinkHidden": true,
+    "userType": "standard",
+    "keyboardSelectionPageSkipped": true,
+    "privacySettingsHidden": true,
+    "deviceUsageType": "shared"
+  },
+  "createdDateTime": "2025-04-14T16:26:05.7562086Z",
+  "extractHardwareHash": true,
+  "preprovisioningAllowed": false,
+  "id": "ecff6714-9efe-43ed-b10c-de349ffdb6ef",
+  "managementServiceAppId": null,
+  "enrollmentStatusScreenSettings": null,
+  "locale": "en-US",
+  "roleScopeTagIds": [
+    "0"
+  ],
+  "displayName": "Autopilot Standard",
+  "@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/windowsAutopilotDeploymentProfiles/$entity",
+  "lastModifiedDateTime": "2025-04-14T17:18:50.2598931Z"
+}

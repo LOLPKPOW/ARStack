@@ -1,0 +1,379 @@
+{
+  "roleScopeTagIds": [
+    "0"
+  ],
+  "templateReference": {
+    "templateId": "19c8aa67-f286-4861-9aa0-f23541d31680_1",
+    "templateDisplayVersion": "Version 1",
+    "templateFamily": "endpointSecurityFirewall",
+    "templateDisplayName": "Windows Firewall Rules"
+  },
+  "description": "Allows RDP, SMB, WMI, and ping.",
+  "id": "bfd2f9dd-2e11-49e5-8048-3aa3db6b78ef",
+  "name": "Firewall Rules - Basic",
+  "creationSource": null,
+  "lastModifiedDateTime": "2025-04-16T16:51:29.6380146Z",
+  "priorityMetaData": null,
+  "platforms": "windows10",
+  "settingCount": 1,
+  "createdDateTime": "2025-04-16T16:51:29.6380146Z",
+  "technologies": "mdm,microsoftSense",
+  "settings": [
+    {
+      "id": "0",
+      "settingInstance": {
+        "settingDefinitionId": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}",
+        "settingInstanceTemplateReference": {
+          "settingInstanceTemplateId": "76c7a8be-67d2-44bf-81a5-38c94926b1a1"
+        },
+        "groupSettingCollectionValue": [
+          {
+            "children": [
+              {
+                "settingDefinitionId": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_name",
+                "settingInstanceTemplateReference": null,
+                "simpleSettingValue": {
+                  "settingValueTemplateReference": null,
+                  "value": "Allow RDP",
+                  "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue"
+                },
+                "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance"
+              },
+              {
+                "settingDefinitionId": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_action_type",
+                "settingInstanceTemplateReference": null,
+                "choiceSettingValue": {
+                  "children": [],
+                  "settingValueTemplateReference": null,
+                  "value": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_action_type_1"
+                },
+                "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance"
+              },
+              {
+                "settingDefinitionId": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_direction",
+                "settingInstanceTemplateReference": null,
+                "choiceSettingValue": {
+                  "children": [],
+                  "settingValueTemplateReference": null,
+                  "value": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_direction_out"
+                },
+                "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance"
+              },
+              {
+                "settingDefinitionId": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_enabled",
+                "settingInstanceTemplateReference": null,
+                "choiceSettingValue": {
+                  "children": [],
+                  "settingValueTemplateReference": null,
+                  "value": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_enabled_1"
+                },
+                "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance"
+              },
+              {
+                "choiceSettingCollectionValue": [
+                  {
+                    "children": [],
+                    "settingValueTemplateReference": null,
+                    "value": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_interfacetypes_remoteaccess"
+                  },
+                  {
+                    "children": [],
+                    "settingValueTemplateReference": null,
+                    "value": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_interfacetypes_wireless"
+                  },
+                  {
+                    "children": [],
+                    "settingValueTemplateReference": null,
+                    "value": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_interfacetypes_lan"
+                  }
+                ],
+                "settingDefinitionId": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_interfacetypes",
+                "settingInstanceTemplateReference": null,
+                "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingCollectionInstance"
+              },
+              {
+                "simpleSettingCollectionValue": [
+                  {
+                    "settingValueTemplateReference": null,
+                    "value": "3389",
+                    "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue"
+                  }
+                ],
+                "settingDefinitionId": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_localportranges",
+                "settingInstanceTemplateReference": null,
+                "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingCollectionInstance"
+              },
+              {
+                "settingDefinitionId": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_description",
+                "settingInstanceTemplateReference": null,
+                "simpleSettingValue": {
+                  "settingValueTemplateReference": null,
+                  "value": "Allow RDP",
+                  "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue"
+                },
+                "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance"
+              }
+            ],
+            "settingValueTemplateReference": null
+          },
+          {
+            "children": [
+              {
+                "settingDefinitionId": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_name",
+                "settingInstanceTemplateReference": null,
+                "simpleSettingValue": {
+                  "settingValueTemplateReference": null,
+                  "value": "Allow SMB",
+                  "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue"
+                },
+                "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance"
+              },
+              {
+                "settingDefinitionId": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_action_type",
+                "settingInstanceTemplateReference": null,
+                "choiceSettingValue": {
+                  "children": [],
+                  "settingValueTemplateReference": null,
+                  "value": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_action_type_1"
+                },
+                "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance"
+              },
+              {
+                "settingDefinitionId": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_direction",
+                "settingInstanceTemplateReference": null,
+                "choiceSettingValue": {
+                  "children": [],
+                  "settingValueTemplateReference": null,
+                  "value": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_direction_out"
+                },
+                "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance"
+              },
+              {
+                "settingDefinitionId": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_enabled",
+                "settingInstanceTemplateReference": null,
+                "choiceSettingValue": {
+                  "children": [],
+                  "settingValueTemplateReference": null,
+                  "value": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_enabled_1"
+                },
+                "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance"
+              },
+              {
+                "choiceSettingCollectionValue": [
+                  {
+                    "children": [],
+                    "settingValueTemplateReference": null,
+                    "value": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_interfacetypes_remoteaccess"
+                  },
+                  {
+                    "children": [],
+                    "settingValueTemplateReference": null,
+                    "value": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_interfacetypes_wireless"
+                  },
+                  {
+                    "children": [],
+                    "settingValueTemplateReference": null,
+                    "value": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_interfacetypes_lan"
+                  }
+                ],
+                "settingDefinitionId": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_interfacetypes",
+                "settingInstanceTemplateReference": null,
+                "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingCollectionInstance"
+              },
+              {
+                "simpleSettingCollectionValue": [
+                  {
+                    "settingValueTemplateReference": null,
+                    "value": "445",
+                    "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue"
+                  }
+                ],
+                "settingDefinitionId": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_localportranges",
+                "settingInstanceTemplateReference": null,
+                "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingCollectionInstance"
+              },
+              {
+                "settingDefinitionId": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_description",
+                "settingInstanceTemplateReference": null,
+                "simpleSettingValue": {
+                  "settingValueTemplateReference": null,
+                  "value": "Allow SMB",
+                  "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue"
+                },
+                "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance"
+              }
+            ],
+            "settingValueTemplateReference": null
+          },
+          {
+            "children": [
+              {
+                "settingDefinitionId": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_name",
+                "settingInstanceTemplateReference": null,
+                "simpleSettingValue": {
+                  "settingValueTemplateReference": null,
+                  "value": "Allow WMI",
+                  "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue"
+                },
+                "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance"
+              },
+              {
+                "settingDefinitionId": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_action_type",
+                "settingInstanceTemplateReference": null,
+                "choiceSettingValue": {
+                  "children": [],
+                  "settingValueTemplateReference": null,
+                  "value": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_action_type_1"
+                },
+                "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance"
+              },
+              {
+                "settingDefinitionId": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_direction",
+                "settingInstanceTemplateReference": null,
+                "choiceSettingValue": {
+                  "children": [],
+                  "settingValueTemplateReference": null,
+                  "value": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_direction_out"
+                },
+                "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance"
+              },
+              {
+                "settingDefinitionId": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_enabled",
+                "settingInstanceTemplateReference": null,
+                "choiceSettingValue": {
+                  "children": [],
+                  "settingValueTemplateReference": null,
+                  "value": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_enabled_1"
+                },
+                "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance"
+              },
+              {
+                "choiceSettingCollectionValue": [
+                  {
+                    "children": [],
+                    "settingValueTemplateReference": null,
+                    "value": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_interfacetypes_remoteaccess"
+                  },
+                  {
+                    "children": [],
+                    "settingValueTemplateReference": null,
+                    "value": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_interfacetypes_wireless"
+                  },
+                  {
+                    "children": [],
+                    "settingValueTemplateReference": null,
+                    "value": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_interfacetypes_lan"
+                  }
+                ],
+                "settingDefinitionId": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_interfacetypes",
+                "settingInstanceTemplateReference": null,
+                "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingCollectionInstance"
+              },
+              {
+                "simpleSettingCollectionValue": [
+                  {
+                    "settingValueTemplateReference": null,
+                    "value": "135",
+                    "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue"
+                  }
+                ],
+                "settingDefinitionId": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_localportranges",
+                "settingInstanceTemplateReference": null,
+                "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingCollectionInstance"
+              },
+              {
+                "settingDefinitionId": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_description",
+                "settingInstanceTemplateReference": null,
+                "simpleSettingValue": {
+                  "settingValueTemplateReference": null,
+                  "value": "Allow WMI",
+                  "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue"
+                },
+                "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance"
+              }
+            ],
+            "settingValueTemplateReference": null
+          },
+          {
+            "children": [
+              {
+                "settingDefinitionId": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_name",
+                "settingInstanceTemplateReference": null,
+                "simpleSettingValue": {
+                  "settingValueTemplateReference": null,
+                  "value": "Allow Ping",
+                  "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue"
+                },
+                "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance"
+              },
+              {
+                "settingDefinitionId": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_action_type",
+                "settingInstanceTemplateReference": null,
+                "choiceSettingValue": {
+                  "children": [],
+                  "settingValueTemplateReference": null,
+                  "value": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_action_type_1"
+                },
+                "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance"
+              },
+              {
+                "settingDefinitionId": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_direction",
+                "settingInstanceTemplateReference": null,
+                "choiceSettingValue": {
+                  "children": [],
+                  "settingValueTemplateReference": null,
+                  "value": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_direction_out"
+                },
+                "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance"
+              },
+              {
+                "settingDefinitionId": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_enabled",
+                "settingInstanceTemplateReference": null,
+                "choiceSettingValue": {
+                  "children": [],
+                  "settingValueTemplateReference": null,
+                  "value": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_enabled_1"
+                },
+                "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance"
+              },
+              {
+                "settingDefinitionId": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_description",
+                "settingInstanceTemplateReference": null,
+                "simpleSettingValue": {
+                  "settingValueTemplateReference": null,
+                  "value": "Allow Ping",
+                  "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue"
+                },
+                "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance"
+              },
+              {
+                "simpleSettingCollectionValue": [
+                  {
+                    "settingValueTemplateReference": null,
+                    "value": "8:0",
+                    "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue"
+                  }
+                ],
+                "settingDefinitionId": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_icmptypesandcodes",
+                "settingInstanceTemplateReference": null,
+                "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingCollectionInstance"
+              },
+              {
+                "settingDefinitionId": "vendor_msft_firewall_mdmstore_firewallrules_{firewallrulename}_protocol",
+                "settingInstanceTemplateReference": null,
+                "simpleSettingValue": {
+                  "settingValueTemplateReference": null,
+                  "value": 1,
+                  "@odata.type": "#microsoft.graph.deviceManagementConfigurationIntegerSettingValue"
+                },
+                "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance"
+              }
+            ],
+            "settingValueTemplateReference": null
+          }
+        ],
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationGroupSettingCollectionInstance"
+      }
+    }
+  ]
+}

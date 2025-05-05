@@ -1,0 +1,28 @@
+[
+  {
+    "id": "3d843abc-dae0-41ef-8ba5-6bb786bc7bc4_0_0",
+    "intent": "available",
+    "sourceId": null,
+    "source": "direct",
+    "target": {
+      "deviceAndAppManagementAssignmentFilterId": null,
+      "groupId": "3d843abc-dae0-41ef-8ba5-6bb786bc7bc4",
+      "deviceAndAppManagementAssignmentFilterType": "none",
+      "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+    },
+    "settings": null
+  },
+  {
+    "id": "f120c24f-537d-40bb-a41c-c823e7f17978_1_0",
+    "intent": "required",
+    "sourceId": null,
+    "source": "direct",
+    "target": {
+      "deviceAndAppManagementAssignmentFilterId": null,
+      "groupId": "f120c24f-537d-40bb-a41c-c823e7f17978",
+      "deviceAndAppManagementAssignmentFilterType": "none",
+      "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+    },
+    "settings": null
+  }
+]

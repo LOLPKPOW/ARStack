@@ -1,0 +1,16 @@
+{
+  "runAs32Bit": true,
+  "displayName": "Re-Enable OneDrive",
+  "description": "Script to fix the GPO blocking OneDrive",
+  "roleScopeTagIds": [
+    "0"
+  ],
+  "runAsAccount": "system",
+  "lastModifiedDateTime": "2025-04-16T14:34:38.1088592Z",
+  "createdDateTime": "2025-04-09T18:46:55.9249952Z",
+  "enforceSignatureCheck": false,
+  "id": "9deb7866-dab1-44a7-b5f0-a7a66b9669a2",
+  "fileName": "Re-enable OneDrive.ps1",
+  "scriptContent": "77u/IyBSZW1vdmUgdGhlIEdyb3VwIFBvbGljeSBraWxsIHN3aXRjaCBpZiBpdCBleGlzdHMNCiRyZWdQYXRoID0gIkhLTE06XFNvZnR3YXJlXFBvbGljaWVzXE1pY3Jvc29mdFxXaW5kb3dzXE9uZURyaXZlIg0KaWYgKFRlc3QtUGF0aCAkcmVnUGF0aCkgew0KICAgIFJlbW92ZS1JdGVtIC1QYXRoICRyZWdQYXRoIC1SZWN1cnNlIC1Gb3JjZQ0KICAgIFdyaXRlLU91dHB1dCAiUmVtb3ZlZCBPbmVEcml2ZSBwb2xpY3kga2V5Ig0KfSBlbHNlIHsNCiAgICBXcml0ZS1PdXRwdXQgIk9uZURyaXZlIHBvbGljeSBrZXkgbm90IHByZXNlbnQiDQp9DQoNCiMgT3B0aW9uYWxseSByZXN0YXJ0IE9uZURyaXZlIChpZiBpbnN0YWxsZWQpDQokb25lZHJpdmVQYXRoID0gIkM6XFByb2dyYW0gRmlsZXNcTWljcm9zb2Z0IE9uZURyaXZlXE9uZURyaXZlLmV4ZSINCmlmIChUZXN0LVBhdGggJG9uZWRyaXZlUGF0aCkgew0KICAgIFN0YXJ0LVByb2Nlc3MgJG9uZWRyaXZlUGF0aCAtQXJndW1lbnRMaXN0ICIvYmFja2dyb3VuZCINCiAgICBXcml0ZS1PdXRwdXQgIk9uZURyaXZlIHN0YXJ0ZWQiDQp9DQo=",
+  "@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/deviceManagementScripts/$entity"
+}

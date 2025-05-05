@@ -1,0 +1,16 @@
+{
+  "runAs32Bit": true,
+  "displayName": "Allow USB",
+  "description": "Allows USB be adjusting a registry key\nHKLM\\SYSTEM\\CurrentControlSet\\Services\\USBSTOR value 3",
+  "roleScopeTagIds": [
+    "0"
+  ],
+  "runAsAccount": "system",
+  "lastModifiedDateTime": "2025-04-21T16:52:30.4381667Z",
+  "createdDateTime": "2025-04-21T16:52:30.4381667Z",
+  "enforceSignatureCheck": false,
+  "id": "294e5dad-1f65-40d9-8a18-b9f512bb58a3",
+  "fileName": "AllowUSB.ps1",
+  "scriptContent": "IyBFbmFibGUgVVNCIE1hc3MgU3RvcmFnZQ0KU2V0LUl0ZW1Qcm9wZXJ0eSAtUGF0aCAiSEtMTVxTWVNURU1cQ3VycmVudENvbnRyb2xTZXRcU2VydmljZXNcVVNCU1RPUiIgLU5hbWUgIlN0YXJ0IiAtVmFsdWUgMw0K",
+  "@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/deviceManagementScripts/$entity"
+}

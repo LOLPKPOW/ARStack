@@ -14,7 +14,7 @@ PowerShell automation scripts to assist with:
 
 ### - Dependencies
 - `PowershellDependencyInstall.ps1`  
-    Purpose: Installs all PowerShell Module Dependencies.
+    Purpose: Installs all required PowerShell modules.
 
 ---
 
@@ -22,36 +22,91 @@ PowerShell automation scripts to assist with:
 
 - `ConvertSharedMailboxes.ps1`  
     Purpose: Load CSV, assign license, convert to shared mailbox, remove license.  
-    CSV: `OldAccountSharedMailboxConversion.csv`  
+    Config: `convert-to-shared.json`  
+    CSV: `full-active-users.csv`  
     Expected Columns:  
-    - `Email`
+    - `EmailAddress`
+
+- `CreateMigrationEndpoint.ps1`  
+    Purpose: Creates Gmail migration endpoint for Exchange Online MMT.  
+    Config: `create-migration-endpoint.json`
+
+- `LoadMigrationBatch.ps1`  
+    Purpose: Loads a Gmail-to-O365 migration batch via endpoint.  
+    Config: `load-migration-batch.json`  
+    CSV: Gmail-format CSV with EmailAddress, Username, and Password.
+
+- `DeltaSync.ps1`  
+    Purpose: Starts all batches listed in MigrationBatchList.csv  
+    CSV: `MigrationBatchList.csv`  
+    Expected Columns:  
+    - `BatchName`
 
 ---
 
 ### - Entra
 
-- `FindOrphanedUsers.ps1`  
-    Purpose: Identify Entra ID users who are not a member of any department group.  
-    Config: `find-orphaned-users.json`  
-    Expected Output: `orphaned-users.csv`  
-    Notes: Requires hardcoded group object IDs in config.
+- `Onboard.ps1`  
+    Purpose: Interactively creates user, applies metadata, assigns license, and adds to DL.  
+    Config: `onboarding-defaults.json`
 
-- `MassMoveOrphanedUsersViaCSV.ps1`  
-    Purpose: Add a list of users (typically orphaned) to a specified Entra ID group.  
-    Config: `orphaned-massmove.json`  
-    CSV: `UsersToGroup.csv`  
-    Expected Columns:  
-    - `UserPrincipalName` or `Email`
+- `Offboard.ps1`  
+    Purpose: Disables user, revokes sessions, removes license, clears profile, converts mailbox to shared, deletes user.  
+    Config: `onboarding-defaults.json`
 
 - `MassDepartmentApplication.ps1`  
-    Purpose: Creates new Entra ID users from CSV and applies department + location metadata.  
+    Purpose: Creates users from CSV and applies default profile values.  
     Config: `onboarding-defaults.json`  
     CSV: `Users_WithUPN.csv`  
     Expected Columns:  
     - `UPN`  
-    - `User` (Full name)  
+    - `User` (Full Name)  
     - `Department`  
     - `JobTitle` *(optional)*
+
+- `FindOrphanedUsers.ps1`  
+    Purpose: Identifies users not in any department group.  
+    Config: `find-orphaned-users.json`  
+    Output: `orphaned-users.csv`
+
+- `MassMoveOrphanedUsersViaCSV.ps1`  
+    Purpose: Adds a list of users (e.g. orphans) to a specific Entra group.  
+    Config: `orphaned-massmove.json`  
+    CSV:  
+    - `UserPrincipalName`
+
+- `SetDefaultAddress.ps1`  
+    Purpose: Applies default location and contact fields to all users.  
+    Config: `onboarding-defaults.json`
+
+---
+
+### - Gmail to 365 Migration Automation
+
+- `LoadMigrationBatch.ps1`  
+    Purpose: Creates and starts a Gmail migration batch.  
+    Config: `load-migration-batch.json`  
+    CSV:  
+    - `EmailAddress`  
+    - `UserName`  
+    - `Password`
+
+- `CreateMigrationEndpoint.ps1`  
+    Purpose: Creates a Google Workspace Endpoint for MMT.  
+    Config: `create-migration-endpoint.json`
+
+- `DeltaSync.ps1`  
+    Purpose: Syncs all migration batches listed in a CSV.  
+    CSV: `MigrationBatchList.csv`  
+    Columns:  
+    - `BatchName`
+
+- `CreateDistributionLists.ps1`  
+    Purpose: Creates distribution lists (with external receiving enabled) loaded from a CSV.  
+    Expected Columns:  
+    - `email`  
+    - `name`  
+    - `description`
 
 ---
 
@@ -67,85 +122,45 @@ PowerShell automation scripts to assist with:
     Purpose: Parse Drive file exports, group by owner, prep for migration.
 
 - `MassUnsuspendViaCSV.ps1`  
-    Purpose: Unsuspends users loaded from CSV.  
+    Purpose: Unsuspends users listed in a CSV.  
     CSV: `StaleAccounts.csv`  
     Expected Columns:  
     - `Email`
 
 - `AllUsersWithNames.bat`  
-    Purpose: Retrieves all users with their full names.
+    Purpose: Outputs all users with full names.
 
 - `ForwardingAddress.bat`  
-    Purpose: Retrieves all mailboxes and any forwarding addresses associated with each mailbox.
+    Purpose: Lists forwarding addresses on all accounts.
 
 - `DistributionListsAutomation.bat`  
-    Purpose: Grabs all the distribution groups from GWorkspace with descriptions, then pulls all the members from the groups and exports to a file.
+    Purpose: Exports all distribution lists and their members from Google Workspace.
 
 ---
 
-### - Gmail to 365 Migration Automation
+### - Intune & Device Security
+ - `IntuneDeployment.ps1`
+    Purpose: Creates Intune Deployments, and the necessary groups for said deployments.
+            Group membership is not required at the time of deployment, just the groups creation, which is a part of the script.
+                All Devices - Not Servers (dynamic)
+                Allow USB
+                Block USB
 
-- `LoadMigrationBatch.ps1`  
-    Purpose: Creates a migration batch using Gmail endpoint.  
-    CSV: `OldAccountConversionBatch.csv`  
-    Expected Columns:  
-    - `EmailAddress`  
-    - `UserName`  
-    - `Password`
+## - Usage
 
-- `CreateEndpoint.ps1`  
-    Purpose: Creates a Google Workspace Endpoint in Microsoft MMT (Microsoft Migration Tool)
-
-- `DeltaSync.ps1`  
-    Purpose: Add migration batches as you create them. Run this file to sync all batches  
-    Notes: Batch names are hardcoded; edit script directly.
-
-- `CreateDistributionLists.ps1`  
-    Purpose: Create distribution lists (with external receiving enabled) loaded from a CSV.  
-    Expected Columns:  
-    - `email`  
-    - `name`  
-    - `description`
-
----
-
-### - OnAndOffboarding
-
-- `Onboard.ps1`  
-    Purpose: Full user creation, group placement, profile updates, and license assignment.  
-    Prompts Interactively.
-
-- `BulkImportFull Name.ps1`  
-    Purpose: Adds user First Name, Last Name, and Display Name imported via CSV  
-    CSV: `BulkFullName.csv`  
-    Expected Columns:  
-    - `primaryEmail`  
-    - `name.givenName`  
-    - `name.familyName`  
-    - `name.fullName`
-
-- `ApplyLitHold.ps1`  
-    Purpose: Applies E3 and Litigation Hold to new user.  
-    Embedded in `Onboard.ps1`.  
-    Notes: Requires hardcoded SKU.
-
-- `RemoveLitHold.ps1`  
-    Purpose: Checks all users for E3+LitHold and removes E3 if both apply.
-
----
-
-## Usage
-
-Update all hardcoded paths before running:
+Update hardcoded paths and values before executing:
 ```powershell
-$csvPath = "C:\YourFolder\StaleAccounts.csv"
-$gamPath = "C:\GAMADV-XTD3\gam.exe"
-$outputPath = "C:\YourPath\StaleAccounts_log.csv"
-$skuID = "WhateverTheCrazyLongSKUIs" # Use Get-MgSubscribedSku
-$objectID = "The Object ID for an Entra Group"
-$Domain = "The domain you want to use"
-$batchName = "Whatever you want to call your batch"
-$endpointName = "Whatever you want to call your Endpoint for the migration"
+$logPath      = "C:\ARStack\AutomationLogs\logs"
+$gamPath      = "C:\GAMADV-XTD3\gam.exe"
+$skuId        = "Use Get-MgSubscribedSku | Select SkuPartNumber, SkuId"
+$domain       = "contoso.onmicrosoft.com"
+$batchName    = "InitialUserMigration"
+$endpointName = "gmailEndpoint"
+```
 
-## Usage
+To check license SKUs:
+```powershell
 Get-MgSubscribedSku | Select SkuPartNumber, SkuId, ConsumedUnits
+```
+
+---
