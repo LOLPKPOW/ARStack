@@ -80,16 +80,6 @@ Invoke-MgGraphRequest -Method PATCH -Uri "https://graph.microsoft.com/v1.0/users
     -Body $nullFields -ContentType "application/json"
 Write-Host ("Profile fields cleared for " + $UserPrincipalName)
 
-# === Add to Offboarded Users Group ===
-if ($groupId) {
-    try {
-        Add-MgGroupMember -GroupId $groupId -DirectoryObjectId $user.Id
-        Write-Host ("Added to offboarded users group: " + $groupId)
-    } catch {
-        Write-Warning ("Failed to add to offboarded group: " + $_)
-    }
-}
-
 # === Delete the User from Entra ===
 try {
     Remove-MgUser -UserId $user.Id -Confirm:$false
