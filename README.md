@@ -146,6 +146,22 @@ PowerShell automation scripts to assist with:
                 Allow USB
                 Block USB
 
+---
+
+### - AzureRunbook
+ - `UnifiedAuditLogs.ps1`
+    Purpose: Daily audit log reports from an Azure Runbook to Sharepoint
+             Variables required in the Runbook for certain areas of the code
+                - ExchangeAppId (Application Id with necessary permissions)
+                - ExcgabgeAytinatuibCert (Name of the cert you uploaded for ExchangeOnlineAuth)
+                - FromEmail (Email it should look like it's coming from)
+                - OrgDomain (Domain of the organization)
+                - SharePointDomain (domain such as contoso.onmicrosoft.com)
+                - SharePointSitePath (site path such as /sites/IT)
+                - TenantId (The TenantId)
+                - ToEmail (Who receives the report)
+
+
 ## - Usage
 
 Update hardcoded paths and values before executing:

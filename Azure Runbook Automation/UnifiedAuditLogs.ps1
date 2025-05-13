@@ -116,13 +116,35 @@ $children = Invoke-MgGraphRequest `
 Write-Output "Files in 'Audit Logs':"
 $children.value | ForEach-Object { Write-Output " - $($_.name) (ID: $($_.id))" }
 
-# 10) Send confirmation email via Microsoft Graph
+# 10) Final status checks & send confirmation email
+
+# Check cert expiration
+$certExpiry = $cert.NotAfter
+$certRemainingDays = ($certExpiry - (Get-Date)).Days
+Write-Output "Certificate expires in $certRemainingDays day(s)."
+
+# Add warning if max logs reached
+# Generate export count message and warning
+$logCount = $logs.Count
+$logCountNote = "$logCount logs exported."
+
+if ($logCount -ge 4000) {
+    $logCountNote += "`nWARNING: Unified Audit Logs return a maximum of 5000 records per run. If you're consistently reaching this limit, it's recommended to adjust the Azure Runbook schedule to run more frequently."
+}
+
+
+# Compose email message body
 $emailBody = @{
     Message = @{
         Subject = "Audit Log Upload Complete"
         Body = @{
             ContentType = "Text"
-            Content     = "$logFileName was generated and uploaded to SharePoint successfully at $(Get-Date)."
+            Content     = @"
+$logFileName was generated and uploaded to SharePoint successfully at $(Get-Date).
+
+Certificate expires in $certRemainingDays day(s).
+$($logs.Count) logs exported.$logCountNote
+"@
         }
         ToRecipients = @(
             @{ EmailAddress = @{ Address = $toEmail } }
@@ -132,3 +154,4 @@ $emailBody = @{
 }
 
 Send-MgUserMail -UserId $fromEmail -BodyParameter $emailBody
+
