@@ -161,6 +161,10 @@ PowerShell automation scripts to assist with:
                 - TenantId (The TenantId)
                 - ToEmail (Who receives the report)
 
+### - Compliance
+ - `retention-policy.ps1`
+    Purpose: Creates 7 year hold and delete for Exchange, SharePoint, OneDrive, Teams, and Teams Private Chats
+
 
 ## - Usage
 
