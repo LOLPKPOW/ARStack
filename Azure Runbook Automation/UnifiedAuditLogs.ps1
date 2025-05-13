@@ -1,13 +1,12 @@
 # 0) Retrieve Automation Variables
 $automationCertName  = Get-AutomationVariable -Name "ExchangeAutomationCert"
 $toEmail             = Get-AutomationVariable -Name "ToEmail"
-$fromEmail             = Get-AutomationVariable -Name "FromEmail"
+$fromEmail           = Get-AutomationVariable -Name "FromEmail"
 $exchangeAppId       = Get-AutomationVariable -Name "ExchangeAppId"
 $tenantId            = Get-AutomationVariable -Name "TenantId"
-$orgDomain         = Get-AutomationVariable -Name "OrgDomain"
-$sharePointDomain  = Get-AutomationVariable -Name "SharePointDomain"
-$sitePath          = Get-AutomationVariable -Name "SharePointSitePath"
-
+$orgDomain           = Get-AutomationVariable -Name "OrgDomain"
+$sharePointDomain    = Get-AutomationVariable -Name "SharePointDomain"
+$sitePath            = Get-AutomationVariable -Name "SharePointSitePath"
 
 # 1) Authenticate to Azure (Managed Identity)
 Connect-AzAccount -Identity
@@ -74,11 +73,32 @@ $year  = (Get-Date).Year
 $month = "{0:D2}" -f (Get-Date).Month
 $day   = "{0:D2}" -f (Get-Date).Day
 
+function Ensure-Folder {
+    param (
+        [string]$parentPath,
+        [string]$folderName
+    )
+
+    $escapedPath = [Uri]::EscapeUriString("$parentPath/$folderName")
+    $uri = "https://graph.microsoft.com/v1.0/drives/$driveId/root:$escapedPath"
+
+    $check = Invoke-MgGraphRequest -Method GET -Uri $uri -ErrorAction SilentlyContinue
+    if (-not $check) {
+        Invoke-MgGraphRequest -Method POST -Uri "https://graph.microsoft.com/v1.0/drives/$driveId/root:$([Uri]::EscapeUriString($parentPath)):/children" `
+            -Body (@{ name = $folderName; folder = @{}; "@microsoft.graph.conflictBehavior" = "rename" } | ConvertTo-Json -Depth 10)
+    }
+}
+
+# Ensure nested folder path exists
+Ensure-Folder "/Audit Logs" $year
+Ensure-Folder "/Audit Logs/$year" $month
+Ensure-Folder "/Audit Logs/$year/$month" $day
+
+# 8) Upload the CSV to SharePoint
 $relativePath = "/Audit Logs/$year/$month/$day/$logFileName"
 $escapedPath  = [Uri]::EscapeUriString($relativePath)
 $uploadUri    = "https://graph.microsoft.com/v1.0/drives/${driveId}/root:${escapedPath}:/content"
 
-# 8) Upload the CSV to SharePoint
 Write-Output "Uploading CSV to SharePoint at path: $uploadUri"
 $response = Invoke-MgGraphRequest `
   -Method      PUT `
